@@ -28,6 +28,28 @@ $installer->getConnection()->addIndex(
 
 $data = array(
     'type'               => 'varchar',
+    'label'              => 'utmz_utmcct',
+    'grid'               => true,
+    'input'              => 'text',
+    'default'            => '',
+    'sort_order'         => 940,
+    'position'           => 940,
+    'user_defined'       => 1,
+    'default'            => null,
+    'required'           => 0
+);
+
+$installer->addAttribute('order', 'rkl_utm_campaign', $data);
+
+// Create index to enhance the search speed on the grid
+$installer->getConnection()->addIndex(
+    $installer->getTable('sales/order_grid'),
+    $installer->getIdxName('sales/order_grid', array('rkl_utm_campaign')),
+    array('rkl_utm_campaign')
+);
+
+$data = array(
+    'type'               => 'varchar',
     'label'              => 'utmz_utmcsr',
     'input'              => 'text',
     'default'            => '',
@@ -82,18 +104,5 @@ $data = array(
 
 $installer->addAttribute('order', 'rkl_utm_content', $data);
 
-$data = array(
-    'type'               => 'varchar',
-    'label'              => 'utmz_utmcct',
-    'input'              => 'text',
-    'default'            => '',
-    'sort_order'         => 940,
-    'position'           => 940,
-    'user_defined'       => 1,
-    'default'            => null,
-    'required'           => 0
-);
-
-$installer->addAttribute('order', 'rkl_utm_campaign', $data);
 
 $installer->endSetup();

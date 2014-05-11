@@ -22,6 +22,9 @@
         <Reckless_TrafficSource>
             <codePool>community</codePool>
             <active>true</active>
+            <depends>
+                <Mage_Sales/>
+            </depends>
         </Reckless_TrafficSource>
     </modules>
 </config>
