@@ -1,5 +1,6 @@
-magento
-=======
+Magento Traffic Source Tracker
+Version 1.0.0.0
+===================================
 
 Magento modules to enhance reckless.io functionalities and provide more powerful information.
 
